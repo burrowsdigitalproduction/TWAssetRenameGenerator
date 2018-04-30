@@ -145,47 +145,47 @@ namespace TWAssetRenameGenerator
                     { Finish(); }
                 }
 
-            else if (cbx1519.IsChecked == true)
+            if (cbx1519.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1519");
             }
-            else if (cbx1625.IsChecked == true)
+            if (cbx1625.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1625");
             }
-            else if (cbx1626.IsChecked == true)
+            if (cbx1626.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1626");
             }
-            else if (cbx1627.IsChecked == true)
+            if (cbx1627.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1627");
             }
-            else if (cbx1628.IsChecked == true)
+            if (cbx1628.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1628");
             }
-            else if (cbx1629.IsChecked == true)
+            if (cbx1629.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1629");
             }
-            else if (cbx1630.IsChecked == true)
+            if (cbx1630.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1630");
             }
-            else if (cbx1631.IsChecked == true)
+            if (cbx1631.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1631");
             }
-            else if (cbx1642.IsChecked == true)
+            if (cbx1642.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1642");
             }
-            else if (cbx1643.IsChecked == true)
+            if (cbx1643.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1643");
             }
-            else if (cbx1644.IsChecked == true)
+            if (cbx1644.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1644");
             }
