@@ -92,5 +92,86 @@ namespace TWAssetRenameGenerator
             }
         }
 
+        public void RenameRocaPackage(string folderPath, string TempFolder)
+        {
+            string replaceRoca = "R1001R2000_1823";
+            List<string> addRoca = new List<string>();
+
+            addRoca.Add("R1001R2000_1821");
+            addRoca.Add("R1001R2000_2632");
+            addRoca.Add("R1001R2000_2633");
+            addRoca.Add("R1001R2000_1546");
+            addRoca.Add("R1001R2000_1489");
+
+            //Move files to temp rename location on desktop 
+            DirectoryInfo fldpath = new DirectoryInfo(folderPath);
+            FileInfo[] files = fldpath.GetFiles("*" + replaceRoca + "*.*");
+            DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
+
+            foreach (FileInfo f in files)
+            {
+                string s = f.FullName;
+
+                string destFile = TempFolder + "\\" + f.Name;
+
+                foreach (string newname in addRoca)
+                {
+                    File.Copy(s, destFile.Replace(replaceRoca, newname), true);
+                }
+            }
+
+            FileInfo[] tfiles = TempFolderInfo.GetFiles();
+
+
+
+            foreach (FileInfo tfile in tfiles)
+            {
+                if (File.Exists(fldpath + "\\" + tfile.Name))
+                {
+                    File.Delete(fldpath + "\\" + tfile.Name);
+                }
+                File.Move(tfile.FullName, fldpath + "\\" + tfile.Name);
+            }
+        }
+
+        public void RenameTheGapPackage(string folderPath, string TempFolder)
+        {
+            string replaceTheGap = "R1001R2000_1761";
+            List<string> addTheGap = new List<string>();
+
+            addTheGap.Add("R1001R2000_1764");
+            addTheGap.Add("R1001R2000_1822");
+
+            //Move files to temp rename location on desktop 
+            DirectoryInfo fldpath = new DirectoryInfo(folderPath);
+            FileInfo[] files = fldpath.GetFiles("*" + replaceTheGap + "*.*");
+            DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
+
+            foreach (FileInfo f in files)
+            {
+                string s = f.FullName;
+
+                string destFile = TempFolder + "\\" + f.Name;
+
+                foreach (string newname in addTheGap)
+                {
+                    File.Copy(s, destFile.Replace(replaceTheGap, newname), true);
+                }
+            }
+
+            FileInfo[] tfiles = TempFolderInfo.GetFiles();
+
+
+
+            foreach (FileInfo tfile in tfiles)
+            {
+                if (File.Exists(fldpath + "\\" + tfile.Name))
+                {
+                    File.Delete(fldpath + "\\" + tfile.Name);
+                }
+                File.Move(tfile.FullName, fldpath + "\\" + tfile.Name);
+            }
+        }
+
     }
 }

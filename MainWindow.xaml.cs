@@ -34,7 +34,7 @@ namespace TWAssetRenameGenerator
         AreaType renameAreaType = new AreaType();
 
         string folderPath;
-        string TempFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Temp";
+        string TempFolder = @"D:\Folder" + "\\Temp";
 
         private void btnFolderBrowse_Click(object sender, RoutedEventArgs e)
         {
@@ -121,7 +121,17 @@ namespace TWAssetRenameGenerator
             {
                 renamePackages.RenameE500Package(folderPath, TempFolder);
             }
-            if (cbxE100.IsChecked == false && cbxE500.IsChecked == false)
+            if (cbxRoca.IsChecked == true)
+            {
+                renamePackages.RenameRocaPackage(folderPath, TempFolder);
+            }
+            if (cbxTheGap.IsChecked == true)
+            {
+                renamePackages.RenameTheGapPackage(folderPath, TempFolder);
+            }
+
+
+            if (cbxE100.IsChecked == false && cbxE500.IsChecked == false && cbxRoca.IsChecked == false && cbxTheGap.IsChecked == false)
             {
                 DialogResult result = System.Windows.Forms.MessageBox.Show("No Packages selected. Continue Anyway?", "No Package Selected", MessageBoxButtons.OKCancel);
                 if (result == System.Windows.Forms.DialogResult.OK)
