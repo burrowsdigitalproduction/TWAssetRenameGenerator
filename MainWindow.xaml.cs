@@ -32,6 +32,7 @@ namespace TWAssetRenameGenerator
         Packages renamePackages = new Packages();
         Radiators renameRadiators = new Radiators();
         AreaType renameAreaType = new AreaType();
+        Bath renameBaths = new Bath();
 
         string folderPath;
         string TempFolder = @"D:\Folder" + "\\Temp";
@@ -66,6 +67,7 @@ namespace TWAssetRenameGenerator
             CheckPackageSettings();
             CheckRadiatorSettings();
             CheckAreaTypeSettings();
+            CheckBath();
             Finish();
 
 
@@ -105,7 +107,7 @@ namespace TWAssetRenameGenerator
             {
                 DialogResult result = System.Windows.Forms.MessageBox.Show("No Taps Selected. Continue anyway?", "No Taps Selected", MessageBoxButtons.OKCancel);
                 if (result == System.Windows.Forms.DialogResult.OK)
-                { CheckPackageSettings(); }
+                { }
                 else if (result == System.Windows.Forms.DialogResult.Cancel)
                 { Finish(); } 
             }
@@ -135,7 +137,7 @@ namespace TWAssetRenameGenerator
             {
                 DialogResult result = System.Windows.Forms.MessageBox.Show("No Packages selected. Continue Anyway?", "No Package Selected", MessageBoxButtons.OKCancel);
                 if (result == System.Windows.Forms.DialogResult.OK)
-                { CheckPackageSettings(); }
+                { }
                 else if (result == System.Windows.Forms.DialogResult.Cancel)
                 { Finish(); }
             }
@@ -150,7 +152,7 @@ namespace TWAssetRenameGenerator
                 {
                     DialogResult result = System.Windows.Forms.MessageBox.Show("No Radiators selected. Continue Anyway?", "No Radiator Selected", MessageBoxButtons.OKCancel);
                     if (result == System.Windows.Forms.DialogResult.OK)
-                    { CheckPackageSettings(); }
+                    {  }
                     else if (result == System.Windows.Forms.DialogResult.Cancel)
                     { Finish(); }
                 }
@@ -208,7 +210,7 @@ namespace TWAssetRenameGenerator
             {
                 DialogResult result = System.Windows.Forms.MessageBox.Show("No Area Types selected. Continue Anyway?", "No Area Type Selected", MessageBoxButtons.OKCancel);
                 if (result == System.Windows.Forms.DialogResult.OK)
-                { CheckPackageSettings(); }
+                {  }
                 else if (result == System.Windows.Forms.DialogResult.Cancel)
                 { Finish(); }
             }
@@ -222,6 +224,15 @@ namespace TWAssetRenameGenerator
             }
 
         }
+
+        public void CheckBath()
+        {
+            if (cbxBath.IsChecked == true)
+            {
+                renameBaths.RenameBaths(folderPath, TempFolder);
+            }
+        }
+
         public void Finish()
         {
             if (Directory.GetFiles(TempFolder).Length == 0 && Directory.GetDirectories(TempFolder).Length == 0)

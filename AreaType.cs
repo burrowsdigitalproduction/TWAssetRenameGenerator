@@ -13,15 +13,15 @@ namespace TWAssetRenameGenerator
 
         public void RenameFullMirror(string folderPath, string TempFolder)
         {
-            string replaceFullMirror = "_full";
+            string replaceFullMirror = "_full.";
 
-            string newname = "_fullmirror";
+            string newname = "_fullmirror.";
 
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
             //Move files to temp rename location on desktop 
             DirectoryInfo fldpath = new DirectoryInfo(folderPath);
-            FileInfo[] files = fldpath.GetFiles("*" + replaceFullMirror + "*.*");
+            FileInfo[] files = fldpath.GetFiles("*" + replaceFullMirror + "*.*", SearchOption.AllDirectories);
 
             foreach (FileInfo f in files)
             {
@@ -38,21 +38,25 @@ namespace TWAssetRenameGenerator
 
             foreach (FileInfo tfile in tfiles)
             {
+                if (File.Exists(fldpath + "\\" + tfile.Name))
+                {
+                    File.Delete(fldpath + "\\" + tfile.Name);
+                }
                 File.Move(tfile.FullName, fldpath + "\\" + tfile.Name);
             }
         }
 
         public void RenameHalfShower(string folderPath, string TempFolder)
         {
-            string replaceHalfShower = "_half";
+            string replaceHalfShower = "_half.";
 
-            string newname = "_halfshower";
+            string newname = "_halfshower.";
 
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
             //Move files to temp rename location on desktop 
             DirectoryInfo fldpath = new DirectoryInfo(folderPath);
-            FileInfo[] files = fldpath.GetFiles("*" + replaceHalfShower + "*.*");
+            FileInfo[] files = fldpath.GetFiles("*" + replaceHalfShower + "*.*", SearchOption.AllDirectories);
 
             foreach (FileInfo f in files)
             {
@@ -69,6 +73,10 @@ namespace TWAssetRenameGenerator
 
             foreach (FileInfo tfile in tfiles)
             {
+                if (File.Exists(fldpath + "\\" + tfile.Name))
+                {
+                    File.Delete(fldpath + "\\" + tfile.Name);
+                }
                 File.Move(tfile.FullName, fldpath + "\\" + tfile.Name);
             }
         }

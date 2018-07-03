@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AreaType.cs" />
+    <Compile Include="Bath.cs" />
     <Compile Include="Packages.cs" />
     <Compile Include="Radiators.cs" />
     <Compile Include="Taps.cs" />

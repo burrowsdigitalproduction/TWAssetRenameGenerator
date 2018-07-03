@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TWAssetRenameGenerator"
         mc:Ignorable="d"
-        Title="TW Asset Code Copy and Renamer" Height="544.118" Width="374.02" ResizeMode="CanMinimize">
+        Title="TW Asset Code Copy and Renamer" Height="574.118" Width="353.02" ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="79*"/>
@@ -22,7 +22,7 @@
         <GroupBox Header="Raidators" HorizontalAlignment="Left" Height="123" Margin="10,267,0,0" VerticalAlignment="Top" Width="333" Grid.ColumnSpan="2">
             <CheckBox x:Name="cbx1518" Content="1518(Base)" HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="80" IsEnabled="False"/>
         </GroupBox>
-        <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="98,485,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="btnRun_Click"/>
+        <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="116,515,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="btnRun_Click"/>
         <CheckBox x:Name="cbxActive" Content="Active" HorizontalAlignment="Left" Height="15" Margin="97,124,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.554,0.654" IsChecked="True" Grid.ColumnSpan="2"/>
         <CheckBox x:Name="cbxTempo" Content="Tempo" HorizontalAlignment="Left" Height="15" Margin="66.216,124,0,0" VerticalAlignment="Top" Width="77" IsChecked="True" Grid.Column="1"/>
         <CheckBox x:Name="cbxE500" Content="E500" HorizontalAlignment="Left" Margin="47,236,0,0" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.556,2.2"/>
@@ -43,6 +43,7 @@
         <CheckBox x:Name="cbxHalfShower" Content="HalfShower" HorizontalAlignment="Left" Margin="20,421,0,0" VerticalAlignment="Top" IsChecked="True" Grid.Column="1"/>
         <CheckBox x:Name="cbxRoca" Content="Roca" HorizontalAlignment="Left" Margin="26,209,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="cbxTheGap" Content="TheGap" HorizontalAlignment="Left" Margin="47,209,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <CheckBox x:Name="cbxBath" Content="Rename Roca Bath" HorizontalAlignment="Left" Height="22" Margin="26,488,0,0" VerticalAlignment="Top" Width="118"/>
 
     </Grid>
 </Window>

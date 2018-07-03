@@ -23,7 +23,7 @@ namespace TWAssetRenameGenerator
 
             //Move files to temp rename location on desktop 
             DirectoryInfo fldpath = new DirectoryInfo(folderPath);
-            FileInfo[] files = fldpath.GetFiles("*" + replaceAlto + "*.*");
+            FileInfo[] files = fldpath.GetFiles("*" + replaceAlto + "*.*", SearchOption.AllDirectories);
 
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
@@ -45,6 +45,10 @@ namespace TWAssetRenameGenerator
 
             foreach (FileInfo tfile in tfiles)
             {
+                if (File.Exists(fldpath + "\\" + tfile.Name))
+                {
+                    File.Delete(fldpath + "\\" + tfile.Name);
+                }
                 File.Move(tfile.FullName, fldpath + "\\" + tfile.Name);
             }
         }
@@ -59,7 +63,7 @@ namespace TWAssetRenameGenerator
 
             //Move files to temp rename location on desktop 
             DirectoryInfo fldpath = new DirectoryInfo(folderPath);
-            FileInfo[] files = fldpath.GetFiles("*" + replaceActive + "*.*");
+            FileInfo[] files = fldpath.GetFiles("*" + replaceActive + "*.*", SearchOption.AllDirectories);
 
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
@@ -81,6 +85,10 @@ namespace TWAssetRenameGenerator
 
             foreach (FileInfo tfile in tfiles)
             {
+                if (File.Exists(fldpath + "\\" + tfile.Name))
+                {
+                    File.Delete(fldpath + "\\" + tfile.Name);
+                }
                 File.Move(tfile.FullName, fldpath + "\\" + tfile.Name);
             }
         }
@@ -95,7 +103,7 @@ namespace TWAssetRenameGenerator
 
             //Move files to temp rename location on desktop 
             DirectoryInfo fldpath = new DirectoryInfo(folderPath);
-            FileInfo[] files = fldpath.GetFiles("*" + replaceTempo + "*.*");
+            FileInfo[] files = fldpath.GetFiles("*" + replaceTempo + "*.*", SearchOption.AllDirectories);
 
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
@@ -117,6 +125,10 @@ namespace TWAssetRenameGenerator
 
             foreach (FileInfo tfile in tfiles)
             {
+                if (File.Exists(fldpath + "\\" + tfile.Name))
+                {
+                    File.Delete(fldpath + "\\" + tfile.Name);
+                }
                 File.Move(tfile.FullName, fldpath + "\\" + tfile.Name);
             }
         }

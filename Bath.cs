@@ -7,18 +7,23 @@ using System.IO;
 
 namespace TWAssetRenameGenerator
 {
-    public class Radiators
+    class Bath
     {
-
-
-        public void RenameRadiators(string folderPath, List<string> RadCodes, string TempFolder)
+        public void RenameBaths(string folderPath, string TempFolder)
         {
-            string replaceRadiators = "R1001R1002_1518";
+            string replaceBath = "R1001R2001_1762";
+            List<string> addBath = new List<string>();
+
+            addBath.Add("R1001R2001_1763");
+            addBath.Add("R1001R2001_2630");
+            addBath.Add("R1001R2001_2649");
+            addBath.Add("R1001R2001_2662");
+            addBath.Add("R1001R2001_2663");
 
 
             //Move files to temp rename location on desktop 
             DirectoryInfo fldpath = new DirectoryInfo(folderPath);
-            FileInfo[] files = fldpath.GetFiles("*" + replaceRadiators + "*.*", SearchOption.AllDirectories);
+            FileInfo[] files = fldpath.GetFiles("*" + replaceBath + "*.*", SearchOption.AllDirectories);
 
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
@@ -28,9 +33,9 @@ namespace TWAssetRenameGenerator
 
                 string destFile = TempFolder + "\\" + f.Name;
 
-                foreach (string newname in RadCodes)
+                foreach (string newname in addBath)
                 {
-                    File.Copy(s, destFile.Replace(replaceRadiators, newname), true);
+                    File.Copy(s, destFile.Replace(replaceBath, newname), true);
                 }
             }
 

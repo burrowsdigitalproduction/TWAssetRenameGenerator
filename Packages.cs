@@ -22,7 +22,7 @@ namespace TWAssetRenameGenerator
 
             //Move files to temp rename location on desktop 
             DirectoryInfo fldpath = new DirectoryInfo(folderPath);
-            FileInfo[] files = fldpath.GetFiles("*" + replaceE100 + "*.*");
+            FileInfo[] files = fldpath.GetFiles("*" + replaceE100 + "*.*", SearchOption.AllDirectories);
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
             foreach (FileInfo f in files)
@@ -63,7 +63,7 @@ namespace TWAssetRenameGenerator
 
             //Move files to temp rename location on desktop 
             DirectoryInfo fldpath = new DirectoryInfo(folderPath);
-            FileInfo[] files = fldpath.GetFiles("*" + replaceE500 + "*.*");
+            FileInfo[] files = fldpath.GetFiles("*" + replaceE500 + "*.*", SearchOption.AllDirectories);
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
             foreach (FileInfo f in files)
@@ -105,7 +105,7 @@ namespace TWAssetRenameGenerator
 
             //Move files to temp rename location on desktop 
             DirectoryInfo fldpath = new DirectoryInfo(folderPath);
-            FileInfo[] files = fldpath.GetFiles("*" + replaceRoca + "*.*");
+            FileInfo[] files = fldpath.GetFiles("*" + replaceRoca + "*.*", SearchOption.AllDirectories);
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
             foreach (FileInfo f in files)
@@ -144,7 +144,7 @@ namespace TWAssetRenameGenerator
 
             //Move files to temp rename location on desktop 
             DirectoryInfo fldpath = new DirectoryInfo(folderPath);
-            FileInfo[] files = fldpath.GetFiles("*" + replaceTheGap + "*.*");
+            FileInfo[] files = fldpath.GetFiles("*" + replaceTheGap + "*.*", SearchOption.AllDirectories);
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
             foreach (FileInfo f in files)

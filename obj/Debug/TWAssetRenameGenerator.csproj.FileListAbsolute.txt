@@ -43,3 +43,18 @@ C:\Users\grimwoodb\OneDrive - YRBrands\Documents\GitHub\TWAssetRenameGenerator\o
 C:\Users\grimwoodb\OneDrive - YRBrands\Documents\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.csproj.CoreCompileInputs.cache
 C:\Users\grimwoodb\OneDrive - YRBrands\Documents\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.exe
 C:\Users\grimwoodb\OneDrive - YRBrands\Documents\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.pdb
+D:\GitHub\TWAssetRenameGenerator\bin\Debug\TWAssetRenameGenerator.exe.config
+D:\GitHub\TWAssetRenameGenerator\bin\Debug\TWAssetRenameGenerator.exe
+D:\GitHub\TWAssetRenameGenerator\bin\Debug\TWAssetRenameGenerator.pdb
+D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.csprojAssemblyReference.cache
+D:\GitHub\TWAssetRenameGenerator\obj\Debug\MainWindow.g.cs
+D:\GitHub\TWAssetRenameGenerator\obj\Debug\App.g.cs
+D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator_MarkupCompile.cache
+D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator_MarkupCompile.lref
+D:\GitHub\TWAssetRenameGenerator\obj\Debug\MainWindow.baml
+D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.g.resources
+D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.Properties.Resources.resources
+D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.csproj.GenerateResource.cache
+D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.csproj.CoreCompileInputs.cache
+D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.exe
+D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.pdb
