@@ -18,6 +18,7 @@ namespace TWAssetRenameGenerator
             addE100.Add("R1001R2000_1825");
             addE100.Add("R1001R2000_1828");
             addE100.Add("R1001R2000_1747");
+            addE100.Add("R1001R2000_2644");
 
 
             //Move files to temp rename location on desktop 
