@@ -13,16 +13,21 @@ namespace TWAssetRenameGenerator
 
         public void RenameFullMirror(string folderPath, string TempFolder)
         {
+            //Add string to find
             string replaceFullMirror = "_full.";
 
+            //Add string to replace with
             string newname = "_fullmirror.";
 
+            //Tell tool the temp folder location
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
-            //Move files to temp rename location on desktop 
+            //Tell tool the asset folder location
             DirectoryInfo fldpath = new DirectoryInfo(folderPath);
+            //Collect files that have the original code
             FileInfo[] files = fldpath.GetFiles("*" + replaceFullMirror + "*.*", SearchOption.AllDirectories);
 
+            //Foreach file found in the asset folder copy to tempfolder and rename
             foreach (FileInfo f in files)
             {
                 string s = f.FullName;
@@ -32,10 +37,10 @@ namespace TWAssetRenameGenerator
                     File.Copy(s, destFile.Replace(replaceFullMirror, newname), true);
             }
 
+            //Collect files in the temp folder
             FileInfo[] tfiles = TempFolderInfo.GetFiles();
 
-
-
+            //Copy temp folder files to the asset folder and overwrite if needed
             foreach (FileInfo tfile in tfiles)
             {
                 if (File.Exists(fldpath + "\\" + tfile.Name))
@@ -46,6 +51,7 @@ namespace TWAssetRenameGenerator
             }
         }
 
+        //Disabled due to half shower no longer being a copy
         public void RenameHalfShower(string folderPath, string TempFolder)
         {
             string replaceHalfShower = "_half.";

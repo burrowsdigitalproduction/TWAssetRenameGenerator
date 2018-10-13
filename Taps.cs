@@ -14,19 +14,24 @@ namespace TWAssetRenameGenerator
 
         public void RenameAltoTaps(string folderPath, string TempFolder)
         {
+            //Add the original code to find
             string replaceAlto = "R1001R1030_1011";
+            //Create list of replacement codes
             List<string> addAlto = new List<string>();
 
+            //Add codes to list
             addAlto.Add("R1001R1030_1030");
             addAlto.Add("R1001R1030_1032");
 
 
-            //Move files to temp rename location on desktop 
+            //Tell tool the asset folder location
             DirectoryInfo fldpath = new DirectoryInfo(folderPath);
+            //Collect files that have the original code
             FileInfo[] files = fldpath.GetFiles("*" + replaceAlto + "*.*", SearchOption.AllDirectories);
-
+            //Tell tool the temp folder location
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
+            //For each file with the original code copy and rename
             foreach (FileInfo f in files)
             {
                 string s = f.FullName;
@@ -39,10 +44,11 @@ namespace TWAssetRenameGenerator
                 }
             }
 
+            //Collect files in Temp folder
             FileInfo[] tfiles = TempFolderInfo.GetFiles();
 
             
-
+            //Move files to the asset folder and overwrite if needed
             foreach (FileInfo tfile in tfiles)
             {
                 if (File.Exists(fldpath + "\\" + tfile.Name))
@@ -53,6 +59,7 @@ namespace TWAssetRenameGenerator
             }
         }
 
+        //Same structure as above comments
         public void RenameActiveTaps(string folderPath, string TempFolder)
         {
             string replaceActive = "R1001R1030_1012";
@@ -92,7 +99,7 @@ namespace TWAssetRenameGenerator
                 File.Move(tfile.FullName, fldpath + "\\" + tfile.Name);
             }
         }
-
+        //Same structure as above comments
         public void RenameTempoTaps(string folderPath, string TempFolder)
         {
             string replaceTempo = "R1001R1030_1027";
