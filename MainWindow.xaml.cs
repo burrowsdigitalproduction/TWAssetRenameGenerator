@@ -27,16 +27,19 @@ namespace TWAssetRenameGenerator
             InitializeComponent();
           
         }
-
+        //Set Classes for reference
         Taps renameTaps = new Taps();
         Packages renamePackages = new Packages();
         Radiators renameRadiators = new Radiators();
         AreaType renameAreaType = new AreaType();
         Bath renameBaths = new Bath();
 
+        //Create empty string for the asset folder
         string folderPath;
+        //Set string for a temporary folder
         string TempFolder = @"D:\Folder" + "\\Temp";
 
+        //Folder Browser to select the asset folder
         private void btnFolderBrowse_Click(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog folderDlg = new FolderBrowserDialog();
@@ -60,13 +63,15 @@ namespace TWAssetRenameGenerator
 
         }
 
+
         private void btnRun_Click(object sender, RoutedEventArgs e)
         {
+            //Runs through each sections selections and runs the functions
             CreateTempFolder();
-            CheckTapSettings();
             CheckPackageSettings();
             CheckRadiatorSettings();
             CheckAreaTypeSettings();
+            CheckTapSettings();
             CheckBath();
             Finish();
 
@@ -77,7 +82,7 @@ namespace TWAssetRenameGenerator
         public void CreateTempFolder()
         {
             
-
+            //Creates and temporary folder and if that exists cahnages the name and tries to create again
             if (!Directory.Exists(TempFolder))
             {
                 Directory.CreateDirectory(TempFolder);
@@ -91,6 +96,7 @@ namespace TWAssetRenameGenerator
 
         public void CheckTapSettings()
         {
+            //Checks through the checkbox selections and runs the appropriate functions
             if (cbxAlto.IsChecked == true)
             {
                 renameTaps.RenameAltoTaps(folderPath, TempFolder);
@@ -103,6 +109,8 @@ namespace TWAssetRenameGenerator
             {
                 renameTaps.RenameTempoTaps(folderPath, TempFolder);
             }
+
+            //If all checkboxes are unticked asks if thats correct and provides a continue or cancel option
             if (cbxAlto.IsChecked == false && cbxActive.IsChecked == false && cbxTempo.IsChecked == false)
             {
                 DialogResult result = System.Windows.Forms.MessageBox.Show("No Taps Selected. Continue anyway?", "No Taps Selected", MessageBoxButtons.OKCancel);
@@ -115,6 +123,7 @@ namespace TWAssetRenameGenerator
 
         public void CheckPackageSettings()
         {
+            //Checks through the checkbox selections and runs the appropriate functions
             if (cbxE100.IsChecked == true)
             {
                 renamePackages.RenameE100Package(folderPath, TempFolder);
@@ -132,7 +141,7 @@ namespace TWAssetRenameGenerator
                 renamePackages.RenameTheGapPackage(folderPath, TempFolder);
             }
 
-
+            //If all checkboxes are unticked asks if thats correct and provides a continue or cancel option
             if (cbxE100.IsChecked == false && cbxE500.IsChecked == false && cbxRoca.IsChecked == false && cbxTheGap.IsChecked == false)
             {
                 DialogResult result = System.Windows.Forms.MessageBox.Show("No Packages selected. Continue Anyway?", "No Package Selected", MessageBoxButtons.OKCancel);
@@ -146,8 +155,10 @@ namespace TWAssetRenameGenerator
 
         public void CheckRadiatorSettings()
         {
+            //Creates an empty list for radiator codes
             List<string> RadCodes = new List<string>();
 
+            //If all checkboxes are unticked asks if thats correct and provides a continue or cancel option
             if (cbx1519.IsChecked == false && cbx1625.IsChecked == false && cbx1626.IsChecked == false && cbx1627.IsChecked == false && cbx1628.IsChecked == false && cbx1629.IsChecked == false && cbx1630.IsChecked == false && cbx1631.IsChecked == false && cbx1642.IsChecked == false && cbx1643.IsChecked == false && cbx1644.IsChecked == false)
                 {
                     DialogResult result = System.Windows.Forms.MessageBox.Show("No Radiators selected. Continue Anyway?", "No Radiator Selected", MessageBoxButtons.OKCancel);
@@ -157,6 +168,7 @@ namespace TWAssetRenameGenerator
                     { Finish(); }
                 }
 
+            //Check checkboxes and if any are ticked add the relevant code to the list
             if (cbx1519.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1519");
@@ -201,11 +213,13 @@ namespace TWAssetRenameGenerator
             {
                 RadCodes.Add("R1001R1002_1644");
             }
+            //Run Function
             renameRadiators.RenameRadiators(folderPath, RadCodes, TempFolder);
         }
 
         public void CheckAreaTypeSettings()
         {
+            //If all checkboxes are unticked asks if thats correct and provides a continue or cancel option
             if (cbxFullMirror.IsChecked == false && cbxHalfShower.IsChecked == false)
             {
                 DialogResult result = System.Windows.Forms.MessageBox.Show("No Area Types selected. Continue Anyway?", "No Area Type Selected", MessageBoxButtons.OKCancel);
@@ -214,6 +228,7 @@ namespace TWAssetRenameGenerator
                 else if (result == System.Windows.Forms.DialogResult.Cancel)
                 { Finish(); }
             }
+            //Checks through the checkbox selections and runs the appropriate functions
             else if (cbxFullMirror.IsChecked == true)
             {
                 renameAreaType.RenameFullMirror(folderPath, TempFolder);
@@ -227,6 +242,7 @@ namespace TWAssetRenameGenerator
 
         public void CheckBath()
         {
+            //If checkbox is ticked run fuction
             if (cbxBath.IsChecked == true)
             {
                 renameBaths.RenameBaths(folderPath, TempFolder);
@@ -235,11 +251,12 @@ namespace TWAssetRenameGenerator
 
         public void Finish()
         {
+            //If the temp folder is empty it deletes it
             if (Directory.GetFiles(TempFolder).Length == 0 && Directory.GetDirectories(TempFolder).Length == 0)
             {
                 Directory.Delete(TempFolder, false);
             }
-
+            //Display Done message
             System.Windows.Forms.MessageBox.Show("Copy Over Complete","All Done!", MessageBoxButtons.OK);
 
 
