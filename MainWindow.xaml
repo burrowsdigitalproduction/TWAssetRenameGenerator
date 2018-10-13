@@ -37,10 +37,9 @@
         <CheckBox x:Name="cbx1644" Content="1644" HorizontalAlignment="Left" Height="16" Margin="47.216,360,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.586,5.186" IsChecked="True" Grid.Column="1"/>
         <CheckBox x:Name="cbx1643" Content="1643" HorizontalAlignment="Left" Height="16" Margin="47.216,339,0,0" VerticalAlignment="Top" Width="80" IsChecked="True" Grid.Column="1"/>
         <CheckBox x:Name="cbx1642" Content="1642" HorizontalAlignment="Left" Height="16" Margin="47.216,319,0,0" VerticalAlignment="Top" Width="80" IsChecked="True" Grid.Column="1"/>
-        <GroupBox Grid.ColumnSpan="2" Header="Area Type Copy" HorizontalAlignment="Left" Height="69" Margin="10,395,0,0" VerticalAlignment="Top" Width="333">
+        <GroupBox Grid.ColumnSpan="2" Header="Area Type Copy" HorizontalAlignment="Left" Height="69" Margin="10,395,0,0" VerticalAlignment="Top" Width="327">
             <CheckBox x:Name="cbxFullMirror" Content="FullMirror" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" IsChecked="True"/>
         </GroupBox>
-        <CheckBox x:Name="cbxHalfShower" Content="HalfShower" HorizontalAlignment="Left" Margin="20,421,0,0" VerticalAlignment="Top" IsChecked="True" Grid.Column="1"/>
         <CheckBox x:Name="cbxRoca" Content="Roca" HorizontalAlignment="Left" Margin="26,209,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="cbxTheGap" Content="TheGap" HorizontalAlignment="Left" Margin="47,209,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <CheckBox x:Name="cbxBath" Content="Rename Roca Bath" HorizontalAlignment="Left" Height="22" Margin="26,488,0,0" VerticalAlignment="Top" Width="118"/>
