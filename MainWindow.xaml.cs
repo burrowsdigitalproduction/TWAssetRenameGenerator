@@ -69,10 +69,10 @@ namespace TWAssetRenameGenerator
             //Runs through each sections selections and runs the functions
             CreateTempFolder();
             CheckPackageSettings();
-            CheckRadiatorSettings();
             CheckAreaTypeSettings();
             CheckTapSettings();
             CheckBath();
+            CheckRadiatorSettings();
             Finish();
 
 
@@ -212,6 +212,14 @@ namespace TWAssetRenameGenerator
             if (cbx1644.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1644");
+                RadCodes.Add("R1001R1002_2790");
+                RadCodes.Add("R1001R1002_2791");
+                RadCodes.Add("R1001R1002_2792");
+                RadCodes.Add("R1001R1002_2793");
+                RadCodes.Add("R1001R1002_2794");
+                RadCodes.Add("R1001R1002_2795");
+                RadCodes.Add("R1001R1002_2796");
+                RadCodes.Add("R1001R1002_2797");
             }
             //Run Function
             renameRadiators.RenameRadiators(folderPath, RadCodes, TempFolder);
