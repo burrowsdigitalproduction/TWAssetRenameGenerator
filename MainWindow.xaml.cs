@@ -67,13 +67,27 @@ namespace TWAssetRenameGenerator
         private void btnRun_Click(object sender, RoutedEventArgs e)
         {
             //Runs through each sections selections and runs the functions
-            CreateTempFolder();
-            CheckPackageSettings();
-            CheckAreaTypeSettings();
-            CheckTapSettings();
-            CheckBath();
-            CheckRadiatorSettings();
-            Finish();
+
+            folderPath = tbFolderPath.Text;
+
+            if (tabBaseAssets.IsSelected == true && tabBathAssets.IsSelected == false)
+            {
+                CreateTempFolder();
+                CheckPackageSettings();
+                CheckAreaTypeSettings();
+                CheckRadiatorSettings();
+                Finish();
+            }
+            else if (tabBaseAssets.IsSelected == false && tabBathAssets.IsSelected == true)
+            {
+                CreateTempFolder();
+                CheckTapSettings();
+                CheckBath();
+                Finish();
+            }
+
+            
+            
 
 
             
@@ -159,7 +173,7 @@ namespace TWAssetRenameGenerator
             List<string> RadCodes = new List<string>();
 
             //If all checkboxes are unticked asks if thats correct and provides a continue or cancel option
-            if (cbx1519.IsChecked == false && cbx1625.IsChecked == false && cbx1626.IsChecked == false && cbx1627.IsChecked == false && cbx1628.IsChecked == false && cbx1629.IsChecked == false && cbx1630.IsChecked == false && cbx1631.IsChecked == false && cbx1642.IsChecked == false && cbx1643.IsChecked == false && cbx1644.IsChecked == false)
+            if (cbxRadiatorCopy.IsChecked == false)
                 {
                     DialogResult result = System.Windows.Forms.MessageBox.Show("No Radiators selected. Continue Anyway?", "No Radiator Selected", MessageBoxButtons.OKCancel);
                     if (result == System.Windows.Forms.DialogResult.OK)
@@ -169,48 +183,18 @@ namespace TWAssetRenameGenerator
                 }
 
             //Check checkboxes and if any are ticked add the relevant code to the list
-            if (cbx1519.IsChecked == true)
+            if (cbxRadiatorCopy.IsChecked == true)
             {
                 RadCodes.Add("R1001R1002_1519");
-            }
-            if (cbx1625.IsChecked == true)
-            {
                 RadCodes.Add("R1001R1002_1625");
-            }
-            if (cbx1626.IsChecked == true)
-            {
                 RadCodes.Add("R1001R1002_1626");
-            }
-            if (cbx1627.IsChecked == true)
-            {
                 RadCodes.Add("R1001R1002_1627");
-            }
-            if (cbx1628.IsChecked == true)
-            {
                 RadCodes.Add("R1001R1002_1628");
-            }
-            if (cbx1629.IsChecked == true)
-            {
                 RadCodes.Add("R1001R1002_1629");
-            }
-            if (cbx1630.IsChecked == true)
-            {
                 RadCodes.Add("R1001R1002_1630");
-            }
-            if (cbx1631.IsChecked == true)
-            {
                 RadCodes.Add("R1001R1002_1631");
-            }
-            if (cbx1642.IsChecked == true)
-            {
                 RadCodes.Add("R1001R1002_1642");
-            }
-            if (cbx1643.IsChecked == true)
-            {
                 RadCodes.Add("R1001R1002_1643");
-            }
-            if (cbx1644.IsChecked == true)
-            {
                 RadCodes.Add("R1001R1002_1644");
                 RadCodes.Add("R1001R1002_2790");
                 RadCodes.Add("R1001R1002_2791");
@@ -228,7 +212,7 @@ namespace TWAssetRenameGenerator
         public void CheckAreaTypeSettings()
         {
             //If all checkboxes are unticked asks if thats correct and provides a continue or cancel option
-            if (cbxFullMirror.IsChecked == false && cbxHalfShower.IsChecked == false)
+            if (cbxFullMirror.IsChecked == false)
             {
                 DialogResult result = System.Windows.Forms.MessageBox.Show("No Area Types selected. Continue Anyway?", "No Area Type Selected", MessageBoxButtons.OKCancel);
                 if (result == System.Windows.Forms.DialogResult.OK)
@@ -241,11 +225,6 @@ namespace TWAssetRenameGenerator
             {
                 renameAreaType.RenameFullMirror(folderPath, TempFolder);
             }
-            else if(cbxHalfShower.IsChecked == true)
-            {
-                renameAreaType.RenameHalfShower(folderPath, TempFolder);
-            }
-
         }
 
         public void CheckBath()

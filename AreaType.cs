@@ -50,42 +50,5 @@ namespace TWAssetRenameGenerator
                 File.Move(tfile.FullName, fldpath + "\\" + tfile.Name);
             }
         }
-
-        //Disabled due to half shower no longer being a copy
-        public void RenameHalfShower(string folderPath, string TempFolder)
-        {
-            string replaceHalfShower = "_half.";
-
-            string newname = "_halfshower.";
-
-            DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
-
-            //Move files to temp rename location on desktop 
-            DirectoryInfo fldpath = new DirectoryInfo(folderPath);
-            FileInfo[] files = fldpath.GetFiles("*" + replaceHalfShower + "*.*", SearchOption.AllDirectories);
-
-            foreach (FileInfo f in files)
-            {
-                string s = f.FullName;
-
-                string destFile = TempFolder + "\\" + f.Name;
-
-                    File.Copy(s, destFile.Replace(replaceHalfShower, newname), true);
-            }
-
-            FileInfo[] tfiles = TempFolderInfo.GetFiles();
-
-
-
-            foreach (FileInfo tfile in tfiles)
-            {
-                if (File.Exists(fldpath + "\\" + tfile.Name))
-                {
-                    File.Delete(fldpath + "\\" + tfile.Name);
-                }
-                File.Move(tfile.FullName, fldpath + "\\" + tfile.Name);
-            }
-        }
-
     }
 }

@@ -5,46 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TWAssetRenameGenerator"
         mc:Ignorable="d"
-        Title="TW Asset Code Copy and Renamer" Height="540.288" Width="353.02" ResizeMode="CanMinimize">
-    <Grid>
+        Title="TW Asset Code Copy and Renamer" Height="396.086" Width="377.366" ResizeMode="CanMinimize">
+    <Grid Margin="0,0,4,0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="79*"/>
-            <ColumnDefinition Width="112*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="tbFolderPath" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="228" Margin="10,41,0,0" Grid.ColumnSpan="2" IsEnabled="False"/>
-        <Button x:Name="btnFolderBrowse" Content="Browse" HorizontalAlignment="Left" Margin="98.216,44,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="btnFolderBrowse_Click"/>
-        <GroupBox Header="Bath Taps" HorizontalAlignment="Left" Height="61" Margin="4,379,0,0" VerticalAlignment="Top" Width="333" Grid.ColumnSpan="2">
-            <CheckBox x:Name="cbxAlto" Content="Alto" HorizontalAlignment="Left" Height="15" Margin="0,10,0,0" VerticalAlignment="Top" Width="77" IsChecked="True"/>
-        </GroupBox>
-        <GroupBox Header="PackageCopyOver" HorizontalAlignment="Left" Height="78" Margin="8,84,0,0" VerticalAlignment="Top" Width="333" Grid.ColumnSpan="2">
-            <CheckBox x:Name="cbxE100" Content="E100" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top"/>
-        </GroupBox>
-        <GroupBox Header="Raidators" HorizontalAlignment="Left" Height="123" Margin="8,167,0,0" VerticalAlignment="Top" Width="333" Grid.ColumnSpan="2">
-            <CheckBox x:Name="cbx1518" Content="1518(Base)" HorizontalAlignment="Left" Height="16" Margin="10,10,0,0" VerticalAlignment="Top" Width="80" IsEnabled="False"/>
-        </GroupBox>
-        <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="118,477,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="btnRun_Click"/>
-        <CheckBox x:Name="cbxActive" Content="Active" HorizontalAlignment="Left" Height="15" Margin="91,406,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.554,0.654" IsChecked="True" Grid.ColumnSpan="2"/>
-        <CheckBox x:Name="cbxTempo" Content="Tempo" HorizontalAlignment="Left" Height="15" Margin="60,406,0,0" VerticalAlignment="Top" Width="77" IsChecked="True" Grid.Column="1"/>
-        <CheckBox x:Name="cbxE500" Content="E500" HorizontalAlignment="Left" Margin="45,136,0,0" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.556,2.2"/>
-        <CheckBox x:Name="cbx1519" Content="1519" HorizontalAlignment="Left" Height="16" Margin="24,215,0,0" VerticalAlignment="Top" Width="80" IsChecked="True"/>
-        <CheckBox x:Name="cbx1631" Content="1631" HorizontalAlignment="Left" Height="16" Margin="45,192,0,0" VerticalAlignment="Top" Width="80" IsChecked="True" Grid.Column="1"/>
-        <CheckBox x:Name="cbx1630" Content="1630" HorizontalAlignment="Left" Height="16" Margin="118,260,0,0" VerticalAlignment="Top" Width="80" IsChecked="True" Grid.ColumnSpan="2"/>
-        <CheckBox x:Name="cbx1626" Content="1626" HorizontalAlignment="Left" Height="16" Margin="24,258,0,0" VerticalAlignment="Top" Width="80" IsChecked="True"/>
-        <CheckBox x:Name="cbx1629" Content="1629" HorizontalAlignment="Left" Height="16" Margin="118,239,0,0" VerticalAlignment="Top" Width="80" IsChecked="True" Grid.ColumnSpan="2"/>
-        <CheckBox x:Name="cbx1625" Content="1625" HorizontalAlignment="Left" Height="16" Margin="24,237,0,0" VerticalAlignment="Top" Width="80" IsChecked="True"/>
-        <CheckBox x:Name="cbx1628" Content="1628" HorizontalAlignment="Left" Height="16" Margin="118,218,0,0" VerticalAlignment="Top" Width="80" IsChecked="True" Grid.ColumnSpan="2"/>
-        <CheckBox x:Name="cbx1627" Content="1627" HorizontalAlignment="Left" Height="16" Margin="118,192,0,0" VerticalAlignment="Top" Width="80" IsChecked="True" Grid.ColumnSpan="2"/>
-        <CheckBox x:Name="cbx1644" Content="1644" HorizontalAlignment="Left" Height="16" Margin="45,260,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.586,5.186" IsChecked="True" Grid.Column="1"/>
-        <CheckBox x:Name="cbx1643" Content="1643" HorizontalAlignment="Left" Height="16" Margin="45,239,0,0" VerticalAlignment="Top" Width="80" IsChecked="True" Grid.Column="1"/>
-        <CheckBox x:Name="cbx1642" Content="1642" HorizontalAlignment="Left" Height="16" Margin="45,219,0,0" VerticalAlignment="Top" Width="80" IsChecked="True" Grid.Column="1"/>
-        <GroupBox Grid.ColumnSpan="2" Header="Area Type Copy" HorizontalAlignment="Left" Height="69" Margin="8,295,0,0" VerticalAlignment="Top" Width="333">
-            <CheckBox x:Name="cbxFullMirror" Content="FullMirror" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        </GroupBox>
-        <CheckBox x:Name="cbxHalfShower" Content="HalfShower" HorizontalAlignment="Left" Margin="18,321,0,0" VerticalAlignment="Top" Grid.Column="1" IsEnabled="False"/>
-        <CheckBox x:Name="cbxRoca" Content="Roca" HorizontalAlignment="Left" Margin="24,109,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="cbxTheGap" Content="TheGap" HorizontalAlignment="Left" Margin="45,109,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <CheckBox x:Name="cbxBath" Content="Rename Roca Bath" HorizontalAlignment="Left" Height="22" Margin="16,454,0,0" VerticalAlignment="Top" Width="118"/>
-        <Label Grid.ColumnSpan="2" Content="Select Asset Folder:" HorizontalAlignment="Left" Height="26" Margin="13,20,0,0" VerticalAlignment="Top" Width="188"/>
+        <TabControl HorizontalAlignment="Left" Height="243" Margin="10,78,0,0" VerticalAlignment="Top" Width="353">
+            <TabItem x:Name="tabBaseAssets" Header="Copy and Rename Base Assets">
+                <Grid Background="#FFE5E5E5" Margin="0,-3,-2,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Select Packages to Copy and Rename" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="259" Height="26"/>
+                    <CheckBox x:Name="cbxRoca" Content="Roca" HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.042,0.988" Height="15" Width="46" IsChecked="True"/>
+                    <CheckBox x:Name="cbxTheGap" Content="TheGap" HorizontalAlignment="Left" Margin="70,99,0,0" VerticalAlignment="Top" Height="15" Width="61" IsChecked="True"/>
+                    <CheckBox x:Name="cbxE500" Content="E500" HorizontalAlignment="Left" Margin="199,99,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.556,2.2" Height="15" Width="69" IsChecked="True"/>
+                    <CheckBox x:Name="cbxE100" Content="E100" HorizontalAlignment="Left" Margin="144,99,0,0" VerticalAlignment="Top" Height="15" Width="45" IsChecked="True"/>
+                    <Label Content="Copy Full Base assets to Full Mirror Assets" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="328"/>
+                    <CheckBox x:Name="cbxFullMirror" Content="FullMirror" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                    <CheckBox x:Name="cbxRadiatorCopy" Content="All Radiators" HorizontalAlignment="Left" Margin="11,39,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                    <Label Content="Copy Radiator to All Radiator Codes" HorizontalAlignment="Left" Height="24" Margin="10,10,0,0" VerticalAlignment="Top" Width="246"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabBathAssets" Header="Copy and Rename Bath Assets">
+                <Grid Background="#FFE5E5E5">
+                    <CheckBox x:Name="cbxBath" Content="Rename Roca Bath" HorizontalAlignment="Left" Height="22" Margin="8,113,0,0" VerticalAlignment="Top" Width="118" IsChecked="True"/>
+                    <Label Content="Copy and rename Roca Bath Assets" HorizontalAlignment="Left" Height="25" Margin="10,83,0,0" VerticalAlignment="Top" Width="226"/>
+                    <Label Content="Select Taps to Copy and Rename" HorizontalAlignment="Left" Margin="8,16,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="cbxActive" Content="Active" HorizontalAlignment="Left" Height="15" Margin="77,50,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.554,0.654" IsChecked="True"/>
+                    <CheckBox x:Name="cbxTempo" Content="Tempo" HorizontalAlignment="Left" Height="15" Margin="173,50,0,0" VerticalAlignment="Top" Width="77" IsChecked="True"/>
+                    <CheckBox x:Name="cbxAlto" Content="Alto" HorizontalAlignment="Left" Height="15" Margin="8,50,0,0" VerticalAlignment="Top" Width="77" IsChecked="True" RenderTransformOrigin="6.216,1.67"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="btnFolderBrowse" Content="Browse" HorizontalAlignment="Left" Margin="217,18,0,0" VerticalAlignment="Top" Width="75" Click="btnFolderBrowse_Click"/>
+        <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="10,336,0,0" VerticalAlignment="Top" Width="75" Click="btnRun_Click"/>
+        <TextBox x:Name="tbFolderPath" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="321" Margin="10,41,0,0" RenderTransformOrigin="0.793,1.077"/>
+        <Label Content="Select Asset Folder:" HorizontalAlignment="Left" Height="26" Margin="10,15,0,0" VerticalAlignment="Top" Width="117"/>
 
     </Grid>
 </Window>
