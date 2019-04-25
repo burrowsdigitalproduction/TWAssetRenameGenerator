@@ -16,16 +16,17 @@ namespace TWAssetRenameGenerator
         {
             //Add the original code to find
             string replaceAlto = "R1001R1030_1011";
-            //Create list of replacement codes
-            List<string> addAlto = new List<string>();
+			//Create list of replacement codes and add codes
 
-            //Add codes to list
-            addAlto.Add("R1001R1030_1030");
-            addAlto.Add("R1001R1030_1032");
+			List<string> addAlto = new List<string>
+			{
+				"R1001R1030_1030",
+				"R1001R1030_1032"
+			};
 
 
-            //Tell tool the asset folder location
-            DirectoryInfo fldpath = new DirectoryInfo(folderPath);
+			//Tell tool the asset folder location
+			DirectoryInfo fldpath = new DirectoryInfo(folderPath);
             //Collect files that have the original code
             FileInfo[] files = fldpath.GetFiles("*" + replaceAlto + "*.*", SearchOption.AllDirectories);
             //Tell tool the temp folder location
@@ -63,13 +64,14 @@ namespace TWAssetRenameGenerator
         public void RenameActiveTaps(string folderPath, string TempFolder)
         {
             string replaceActive = "R1001R1030_1012";
-            List<string> addActive = new List<string>();
+			List<string> addActive = new List<string>
+			{
+				"R1001R1030_1031"
+			};
 
-            addActive.Add("R1001R1030_1031");
 
-
-            //Move files to temp rename location on desktop 
-            DirectoryInfo fldpath = new DirectoryInfo(folderPath);
+			//Move files to temp rename location on desktop 
+			DirectoryInfo fldpath = new DirectoryInfo(folderPath);
             FileInfo[] files = fldpath.GetFiles("*" + replaceActive + "*.*", SearchOption.AllDirectories);
 
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
@@ -103,13 +105,14 @@ namespace TWAssetRenameGenerator
         public void RenameTempoTaps(string folderPath, string TempFolder)
         {
             string replaceTempo = "R1001R1030_1027";
-            List<string> addTempo = new List<string>();
+			List<string> addTempo = new List<string>
+			{
+				"R1001R1030_1028"
+			};
 
-            addTempo.Add("R1001R1030_1028");
 
-
-            //Move files to temp rename location on desktop 
-            DirectoryInfo fldpath = new DirectoryInfo(folderPath);
+			//Move files to temp rename location on desktop 
+			DirectoryInfo fldpath = new DirectoryInfo(folderPath);
             FileInfo[] files = fldpath.GetFiles("*" + replaceTempo + "*.*", SearchOption.AllDirectories);
 
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);

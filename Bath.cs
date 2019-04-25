@@ -11,18 +11,19 @@ namespace TWAssetRenameGenerator
     {
         public void RenameBaths(string folderPath, string TempFolder)
         {
-            string replaceBath = "R1001R2001_1762";
-            List<string> addBath = new List<string>();
+			string replaceBath = "R1001R2001_1762";
+			List<string> addBath = new List<string>
+			{
+				"R1001R2001_1763",
+				"R1001R2001_2630",
+				"R1001R2001_2649",
+				"R1001R2001_2662",
+				"R1001R2001_2663"
+			};
 
-            addBath.Add("R1001R2001_1763");
-            addBath.Add("R1001R2001_2630");
-            addBath.Add("R1001R2001_2649");
-            addBath.Add("R1001R2001_2662");
-            addBath.Add("R1001R2001_2663");
 
-
-            //Move files to temp rename location on desktop 
-            DirectoryInfo fldpath = new DirectoryInfo(folderPath);
+			//Move files to temp rename location on desktop 
+			DirectoryInfo fldpath = new DirectoryInfo(folderPath);
             FileInfo[] files = fldpath.GetFiles("*" + replaceBath + "*.*", SearchOption.AllDirectories);
 
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);

@@ -23,16 +23,16 @@ namespace TWAssetRenameGenerator
     public partial class MainWindow : Window
     {
         public MainWindow()
-        {
+		{
             InitializeComponent();
           
         }
-        //Set Classes for reference
-        Taps renameTaps = new Taps();
-        Packages renamePackages = new Packages();
-        Radiators renameRadiators = new Radiators();
-        AreaType renameAreaType = new AreaType();
-        Bath renameBaths = new Bath();
+		//Set Classes for reference
+		Taps renameTaps = new Taps();
+		Packages renamePackages = new Packages();
+		Radiators renameRadiators = new Radiators();
+		AreaType renameAreaType = new AreaType();
+		Bath renameBaths = new Bath();
 
         //Create empty string for the asset folder
         string folderPath;
@@ -50,9 +50,9 @@ namespace TWAssetRenameGenerator
 
             DialogResult result = folderDlg.ShowDialog();
 
-            if (result == System.Windows.Forms.DialogResult.OK)
+			if (result == System.Windows.Forms.DialogResult.OK)
 
-            {
+			{
 
                 folderPath = folderDlg.SelectedPath;
 
@@ -64,13 +64,13 @@ namespace TWAssetRenameGenerator
         }
 
 
-        private void btnRun_Click(object sender, RoutedEventArgs e)
+		private void btnRun_Click(object sender, RoutedEventArgs e)
         {
             //Runs through each sections selections and runs the functions
 
             folderPath = tbFolderPath.Text;
 
-            if (tabBaseAssets.IsSelected == true && tabBathAssets.IsSelected == false)
+			if (tabBaseAssets.IsSelected == true && tabBathAssets.IsSelected == false)
             {
                 CreateTempFolder();
                 CheckPackageSettings();
@@ -102,9 +102,9 @@ namespace TWAssetRenameGenerator
                 Directory.CreateDirectory(TempFolder);
             }
             else if (Directory.Exists(TempFolder))
-            {
+			{
                 TempFolder = TempFolder + "Temp";
-                Directory.CreateDirectory(TempFolder);
+				Directory.CreateDirectory(TempFolder);
             }
         }
 

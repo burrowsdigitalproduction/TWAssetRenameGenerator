@@ -14,18 +14,20 @@ namespace TWAssetRenameGenerator
         {
             //Set the original package code to find
             string replaceE100 = "R1001R2000_1488";
-            //Create a list of codes that need to be created and renamed
-            List<string> addE100 = new List<string>();
+			//Create a list of codes that need to be created and renamed
+			List<string> addE100 = new List<string>
+			{
 
-            //Add codes to the above list
-            addE100.Add("R1001R2000_1825");
-            addE100.Add("R1001R2000_1828");
-            addE100.Add("R1001R2000_1747");
-            addE100.Add("R1001R2000_2644");
+				//Add codes to the above list
+				"R1001R2000_1825",
+				"R1001R2000_1828",
+				"R1001R2000_1747",
+				"R1001R2000_2644"
+			};
 
 
-            //Tell the tool where the folder with original assets is 
-            DirectoryInfo fldpath = new DirectoryInfo(folderPath);
+			//Tell the tool where the folder with original assets is 
+			DirectoryInfo fldpath = new DirectoryInfo(folderPath);
             //Collect files that have the original code
             FileInfo[] files = fldpath.GetFiles("*" + replaceE100 + "*.*", SearchOption.AllDirectories);
             //Create Temp Folder
@@ -62,14 +64,15 @@ namespace TWAssetRenameGenerator
         {
             //Comments follow same patern as the E100 comments
             string replaceE500 = "R1001R2000_1490";
-            List<string> addE500 = new List<string>();
+			List<string> addE500 = new List<string>
+			{
+				"R1001R2000_1820",
+				"R1001R2000_1824",
+				"R1001R2000_1768",
+				"R1001R2000_1767"
+			};
 
-            addE500.Add("R1001R2000_1820");
-            addE500.Add("R1001R2000_1824");
-            addE500.Add("R1001R2000_1768");
-            addE500.Add("R1001R2000_1767");
-
-            DirectoryInfo fldpath = new DirectoryInfo(folderPath);
+			DirectoryInfo fldpath = new DirectoryInfo(folderPath);
             FileInfo[] files = fldpath.GetFiles("*" + replaceE500 + "*.*", SearchOption.AllDirectories);
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
@@ -103,15 +106,16 @@ namespace TWAssetRenameGenerator
         {
             //Comments follow same patern as the E100 comments
             string replaceRoca = "R1001R2000_1823";
-            List<string> addRoca = new List<string>();
+			List<string> addRoca = new List<string>
+			{
+				"R1001R2000_1821",
+				"R1001R2000_2632",
+				"R1001R2000_2633",
+				"R1001R2000_1546",
+				"R1001R2000_1489"
+			};
 
-            addRoca.Add("R1001R2000_1821");
-            addRoca.Add("R1001R2000_2632");
-            addRoca.Add("R1001R2000_2633");
-            addRoca.Add("R1001R2000_1546");
-            addRoca.Add("R1001R2000_1489");
-
-            DirectoryInfo fldpath = new DirectoryInfo(folderPath);
+			DirectoryInfo fldpath = new DirectoryInfo(folderPath);
             FileInfo[] files = fldpath.GetFiles("*" + replaceRoca + "*.*", SearchOption.AllDirectories);
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
@@ -143,14 +147,15 @@ namespace TWAssetRenameGenerator
 
         public void RenameTheGapPackage(string folderPath, string TempFolder)
         {
-            //Comments follow same patern as the E100 comments
-            string replaceTheGap = "R1001R2000_1761";
-            List<string> addTheGap = new List<string>();
+			//Comments follow same patern as the E100 comments
+			string replaceTheGap = "R1001R2000_1761";
+			List<string> addTheGap = new List<string>
+			{
+				"R1001R2000_1764",
+				"R1001R2000_1822"
+			};
 
-            addTheGap.Add("R1001R2000_1764");
-            addTheGap.Add("R1001R2000_1822");
-
-            DirectoryInfo fldpath = new DirectoryInfo(folderPath);
+			DirectoryInfo fldpath = new DirectoryInfo(folderPath);
             FileInfo[] files = fldpath.GetFiles("*" + replaceTheGap + "*.*", SearchOption.AllDirectories);
             DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
 
