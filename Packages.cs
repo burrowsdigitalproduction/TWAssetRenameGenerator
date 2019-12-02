@@ -152,8 +152,9 @@ namespace TWAssetRenameGenerator
 			List<string> addTheGap = new List<string>
 			{
 				"R1001R2000_1764",
-				"R1001R2000_1822"
-			};
+				"R1001R2000_1822",
+                "R1001R2000_3241"
+            };
 
 			DirectoryInfo fldpath = new DirectoryInfo(folderPath);
             FileInfo[] files = fldpath.GetFiles("*" + replaceTheGap + "*.*", SearchOption.AllDirectories);

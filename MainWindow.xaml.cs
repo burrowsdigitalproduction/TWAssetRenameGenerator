@@ -39,8 +39,9 @@ namespace TWAssetRenameGenerator
         //Set string for a temporary folder
         string TempFolder = @"D:\Folder" + "\\Temp";
 
-        //Folder Browser to select the asset folder
-        private void btnFolderBrowse_Click(object sender, RoutedEventArgs e)
+        
+    //Folder Browser to select the asset folder
+    private void btnFolderBrowse_Click(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog folderDlg = new FolderBrowserDialog();
 
@@ -75,7 +76,7 @@ namespace TWAssetRenameGenerator
                 CreateTempFolder();
                 CheckPackageSettings();
                 CheckAreaTypeSettings();
-                CheckRadiatorSettings();
+                //CheckRadiatorSettings();
                 Finish();
             }
             else if (tabBaseAssets.IsSelected == false && tabBathAssets.IsSelected == true)
@@ -95,7 +96,13 @@ namespace TWAssetRenameGenerator
 
         public void CreateTempFolder()
         {
-            
+
+            if (!Directory.Exists(@"D:\"))
+            {
+                TempFolder = @"E:\Folder" + "\\Temp";
+            }
+
+
             //Creates and temporary folder and if that exists cahnages the name and tries to create again
             if (!Directory.Exists(TempFolder))
             {
@@ -153,6 +160,7 @@ namespace TWAssetRenameGenerator
             if (cbxTheGap.IsChecked == true)
             {
                 renamePackages.RenameTheGapPackage(folderPath, TempFolder);
+                renameTaps.RenameActiveBasinTaps(folderPath, TempFolder);
             }
 
             //If all checkboxes are unticked asks if thats correct and provides a continue or cancel option

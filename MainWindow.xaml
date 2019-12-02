@@ -26,7 +26,7 @@
                     <CheckBox x:Name="cbxE100" Content="E100" HorizontalAlignment="Left" Margin="144,99,0,0" VerticalAlignment="Top" Height="15" Width="45" IsChecked="True"/>
                     <Label Content="Copy Full Base assets to Full Mirror Assets" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="328"/>
                     <CheckBox x:Name="cbxFullMirror" Content="FullMirror" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" IsChecked="True"/>
-                    <CheckBox x:Name="cbxRadiatorCopy" Content="All Radiators" HorizontalAlignment="Left" Margin="11,39,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                    <CheckBox x:Name="cbxRadiatorCopy" Content="All Radiators" HorizontalAlignment="Left" Margin="11,39,0,0" VerticalAlignment="Top" IsEnabled="False"/>
                     <Label Content="Copy Radiator to All Radiator Codes" HorizontalAlignment="Left" Height="24" Margin="10,10,0,0" VerticalAlignment="Top" Width="246"/>
                 </Grid>
             </TabItem>

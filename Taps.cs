@@ -142,5 +142,46 @@ namespace TWAssetRenameGenerator
                 File.Move(tfile.FullName, fldpath + "\\" + tfile.Name);
             }
         }
+
+        public void RenameActiveBasinTaps(string folderPath, string TempFolder)
+        {
+            string replaceActive = "R1001R1042_1029";
+            List<string> addActive = new List<string>
+            {
+                "R1001R1042_3244"
+            };
+
+
+            //Move files to temp rename location on desktop 
+            DirectoryInfo fldpath = new DirectoryInfo(folderPath);
+            FileInfo[] files = fldpath.GetFiles("*" + replaceActive + "*.*", SearchOption.AllDirectories);
+
+            DirectoryInfo TempFolderInfo = new DirectoryInfo(TempFolder);
+
+            foreach (FileInfo f in files)
+            {
+                string s = f.FullName;
+
+                string destFile = TempFolder + "\\" + f.Name;
+
+                foreach (string newname in addActive)
+                {
+                    File.Copy(s, destFile.Replace(replaceActive, newname), true);
+                }
+            }
+
+            FileInfo[] tfiles = TempFolderInfo.GetFiles();
+
+
+
+            foreach (FileInfo tfile in tfiles)
+            {
+                if (File.Exists(fldpath + "\\" + tfile.Name))
+                {
+                    File.Delete(fldpath + "\\" + tfile.Name);
+                }
+                File.Move(tfile.FullName, fldpath + "\\" + tfile.Name);
+            }
+        }
     }
 }
