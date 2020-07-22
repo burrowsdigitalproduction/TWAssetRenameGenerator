@@ -21,7 +21,7 @@ namespace TWAssetRenameGenerator
 			List<string> addAlto = new List<string>
 			{
 				"R1001R1030_1030",
-				"R1001R1030_1032"
+				"R1001R1030_1032",
 			};
 
 

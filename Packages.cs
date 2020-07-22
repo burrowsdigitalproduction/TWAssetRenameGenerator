@@ -112,8 +112,17 @@ namespace TWAssetRenameGenerator
 				"R1001R2000_2632",
 				"R1001R2000_2633",
 				"R1001R2000_1546",
-				"R1001R2000_1489"
-			};
+                "R1001R2000_1489",
+                //new codes
+                "R1001R2000_3729",
+                "R1001R2000_3730",
+                "R1001R2000_3731",
+                "R1001R2000_3732",
+                "R1001R2000_3733",
+                "R1001R2000_3734",
+                "R1001R2000_3735",
+                "R1001R2000_3736"
+            };
 
 			DirectoryInfo fldpath = new DirectoryInfo(folderPath);
             FileInfo[] files = fldpath.GetFiles("*" + replaceRoca + "*.*", SearchOption.AllDirectories);
@@ -151,9 +160,20 @@ namespace TWAssetRenameGenerator
 			string replaceTheGap = "R1001R2000_1761";
 			List<string> addTheGap = new List<string>
 			{
-				"R1001R2000_1764",
+                "R1001R2000_1752",
+                "R1001R2000_1764",
 				"R1001R2000_1822",
-                "R1001R2000_3241"
+                "R1001R2000_3241",
+                //new codes below
+                "R1001R2000_3584",
+                "R1001R2000_3585",
+                "R1001R2000_3586",
+                "R1001R2000_3587",
+                "R1001R2000_3588",
+                "R1001R2000_3589",
+                "R1001R2000_3590",
+                "R1001R2000_3591"
+
             };
 
 			DirectoryInfo fldpath = new DirectoryInfo(folderPath);

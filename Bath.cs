@@ -18,8 +18,9 @@ namespace TWAssetRenameGenerator
 				"R1001R2001_2630",
 				"R1001R2001_2649",
 				"R1001R2001_2662",
-				"R1001R2001_2663"
-			};
+				"R1001R2001_2663",
+                "R1001R2001_3242",
+            };
 
 
 			//Move files to temp rename location on desktop 

@@ -55,6 +55,5 @@ D:\GitHub\TWAssetRenameGenerator\obj\Debug\MainWindow.baml
 D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.g.resources
 D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.Properties.Resources.resources
 D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.csproj.GenerateResource.cache
-D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.csproj.CoreCompileInputs.cache
 D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.exe
 D:\GitHub\TWAssetRenameGenerator\obj\Debug\TWAssetRenameGenerator.pdb
